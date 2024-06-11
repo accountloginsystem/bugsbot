@@ -1,11 +1,11 @@
-// bot.js
 const { Telegraf } = require('telegraf');
 const { BOT_TOKEN } = require('./config');
-const { startHandler, webAppDataHandler } = require('./handlers');
+const { startHandler, helpHandler, webAppDataHandler } = require('./handlers');
 
 const bot = new Telegraf(BOT_TOKEN);
 
 bot.start(startHandler);
+bot.help(helpHandler);
 bot.on('web_app_data', webAppDataHandler);
 
 bot.launch().then(() => {
