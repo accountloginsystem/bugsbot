@@ -27,6 +27,7 @@ Let's make it rain!`;
         inline_keyboard: [
           [{ text: 'Play', web_app: { url: referralId ? `${WEB_APP_URL}/home/${chatId}/${referralId}` : `${WEB_APP_URL}/home/${chatId}` } }],
           [{ text: 'Join Community', url: 'https://t.me/hodlswap' }],
+          [{ text: 'Join Our Channel', url: 'https://t.me/HodL_Swap' }],
           // [{ text: 'Help', callback_data: '/help' }]
         ]
       }
