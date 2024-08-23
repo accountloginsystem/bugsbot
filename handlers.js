@@ -4,9 +4,20 @@ const fs = require('fs');
 
 const startHandler = async (ctx) => {
   const chatId = ctx.message.chat.id;
-  const referralId = ctx.message.text.split('=')[1] || '';
   const username = ctx.message.chat.username;
 
+  let referralId = '';
+
+  // Extract referral ID from the text message
+  const textParts = ctx.message.text.split(' ');
+  if (textParts.length > 1) {
+    referralId = textParts[1]; // This will be '01' in your example
+  }
+
+  console.log(ctx.message);
+  console.log("refid"+referralId);
+  
+  
   // Personalized welcome message
   const welcomeMessage = `${username} Welcome to HodlSwap!`;
   const description = `HodlSwap is like a treasure hunt for tokens! Users can earn them by using different mining app features. And guess what? The players get most of the tokens!
