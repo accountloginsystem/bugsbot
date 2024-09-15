@@ -10,12 +10,14 @@ const startHandler = async (ctx) => {
 
   // Extract referral ID from the text message
   const textParts = ctx.message.text.split(' ');
-  if (textParts.length > 1) {
-    referralId = textParts[1]; // This will be '01' in your example
-  }
+  if (textParts.length > 2) {
+    // Case with referral ID
+    referralId = textParts[2]; // referralId will be present in this case
+  } 
 
-  console.log(ctx.message);
-  console.log("refid" + referralId);
+  console.log("Chat ID: " + chatId);
+  console.log("Username: " + username);
+  console.log("Referral ID: " + referralId);
 
   // Personalized welcome message
   const welcomeMessage = `${username}, Welcome to Bugs!`;
@@ -38,7 +40,14 @@ Let's make it rain!`;
       caption: `${welcomeMessage}\n\n${description}\n\n${rewardMessage}`,
       reply_markup: {
         inline_keyboard: [
-          [{ text: 'Play', web_app: { url: referralId ? `${WEB_APP_URL}/home/${chatId}/${referralId}` : `${WEB_APP_URL}/home/${chatId}` } }],
+          [
+            { 
+              text: 'Play', 
+              web_app: { 
+                url: referralId ? `${WEB_APP_URL}/home/${chatId}/${username}/${referralId}` : `${WEB_APP_URL}/home/${chatId}/${username}` 
+              } 
+            }
+          ],
           [{ text: 'Join Our Channel', url: 'https://t.me/bugs' }],
           // Add more buttons if needed
         ]
