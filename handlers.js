@@ -31,7 +31,7 @@ Let's make it rain!`;
   const rewardMessage = `🎉 Special Offer: Get a $50 reward for participating in our Bugs bounty program! Complete tasks, invite friends, and be rewarded. Claim your $50 now! 🎉`;
 
   // Use a local image file
-  const imagePath = 'bugs_image.png';
+  const imagePath = 'Logo.webp';
 
   // Send the welcome message with image, description, reward, and buttons
   await ctx.replyWithPhoto(
