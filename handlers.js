@@ -28,8 +28,7 @@ Let's gather your squad! More buddies mean more coins.
 Let's make it rain!`;
 
   // Message for the $50 reward
-  const rewardMessage = `🎉 Special Offer: Get a $50 reward for participating in our Bugs bounty program! Complete tasks, invite friends, and be rewarded. Claim your $50 now! 🎉`;
-
+ 
   // Use a local image file
   const imagePath = 'Logo.webp';
 
@@ -37,7 +36,7 @@ Let's make it rain!`;
   await ctx.replyWithPhoto(
     { source: imagePath },
     {
-      caption: `${welcomeMessage}\n\n${description}\n\n${rewardMessage}`,
+      caption: `${welcomeMessage}\n\n${description}\n`,
       reply_markup: {
         inline_keyboard: [
           [
