@@ -47,7 +47,6 @@ Let's make it rain!`;
               } 
             }
           ],
-          [{ text: 'Join Our Channel', url: 'https://t.me/bugs' }],
           // Add more buttons if needed
         ]
       }
